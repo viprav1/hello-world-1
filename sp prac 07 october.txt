@@ -1,0 +1,76 @@
+> b=scan()
+1: 5
+2: 5
+3: 5
+4: 10
+5: 10
+6: 10
+7: 10
+8: 30
+9: 18
+10: 18
+11: 19
+12: 18
+13: 14
+14: 14
+15: 14
+16: 10
+17: 28
+18: 20
+19: 8
+20: 10
+21: 15
+22: 22
+23: 20
+24: 15
+25: 22
+26: 15
+27: 15
+28: 15
+29: 
+Read 28 items
+> mean(b)
+[1] 14.82143
+> median(b)
+[1] 15
+> summary(b)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   5.00   10.00   15.00   14.82   18.25   30.00 
+> table(b)
+b
+ 5  8 10 14 15 18 19 20 22 28 30 
+ 3  1  6  3  5  3  1  2  2  1  1
+> mode
+function(x)
+{
+tab=table(x)
+ind=tab[tab==max(tab)]
+mo=as.numeric(names(ind))
+return(mo)
+}
+> mode(b)
+[1] 10
+> sd(b)
+[1] 6.342412
+> skewness=(mean(b)-mode(b))/sd(b)
+> skewness
+[1] 0.7601885
+> skweness=3*(mean(b)-median(b))/sd(b)
+> skweness
+[1] -0.08446539
+> q1=quantile(b,0.25)
+> q2=quantile(b,0.50)
+> q3=quantile(b,0.75)
+> q1
+25% 
+ 10 
+> q2
+50% 
+ 15 
+> q3
+  75% 
+18.25 
+> sk=(q3+q1-2*q2)/(q3-q1)
+> sk
+       75% 
+-0.2121212
